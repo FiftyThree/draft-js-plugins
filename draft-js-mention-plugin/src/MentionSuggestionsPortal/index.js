@@ -13,8 +13,12 @@ export default class MentionSuggestionsPortal extends Component {
     this.props.store.register(this.props.offsetKey);
     this.updatePortalClientRect(this.props);
 
-    // trigger a re-render so the MentionSuggestions becomes active
-    this.props.setEditorState(this.props.getEditorState());
+    // RW: HACK, don't accidentally clear the state when the
+    // editorState prop is empty but the real state is not.
+    if (this.props.getEditorState().getCurrentContent().hasText()) {
+      // trigger a re-render so the MentionSuggestions becomes active
+      this.props.setEditorState(this.props.getEditorState());
+    }
   }
 
   componentWillReceiveProps(nextProps) {
