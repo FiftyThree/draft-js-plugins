@@ -15,7 +15,7 @@ import attachImmutableEntitiesToEmojis from './modifiers/attachImmutableEntities
 import defaultPositionSuggestions from './utils/positionSuggestions';
 import emojiList from './utils/emojiList';
 
-const defaultImagePath = '//cdn.jsdelivr.net/emojione/assets/svg/';
+const defaultImagePath = '//assets.fiftythree.com/paste/emojione/assets/svg/';
 const defaultImageType = 'svg';
 const defaultCacheBustParam = '?v=2.2.6';
 
